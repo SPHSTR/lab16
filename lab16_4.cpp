@@ -17,3 +17,23 @@ int main(){
 	
 	return 0;
 }
+
+void shuffle(int &a,int &b,int &c,int &d){
+	int X[4] = {a,b,c,d};
+	int Y[4] = {0,0,0,0};
+		
+		for(int i=0;i<4;i+=1){
+			Y[i]=rand()%4;
+			for(int j=0;j<i;j+=1){
+				if(Y[i]==Y[j]){
+					i-=1;
+				}
+			}
+		}
+
+		a=X[Y[0]];
+		b=X[Y[1]];
+		c=X[Y[2]];
+		d=X[Y[3]];
+	
+	}
